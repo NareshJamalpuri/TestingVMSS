@@ -117,7 +117,7 @@
     {
       "apiVersion": "[variables('networkApiVersion')]",
       "type": "Microsoft.Network/networkSecurityGroups",
-      "name": "[parameters('NSGName')]",
+      "name": "[variables('NSGName')]",
       "location": "[resourceGroup().location]",
       "tags": {
         "displayName": "NSG - Front End"
