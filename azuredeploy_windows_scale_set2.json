@@ -114,30 +114,6 @@
   },
   "resources": [
     {
-      "name": "DSCPowerShell",
-      "type": "extensions",
-      "location": "[resourceGroup().location]",
-      "apiVersion": "2015-05-01-preview",
-      "tags": {
-        "displayName": "DSCPowerShell"
-      },
-      "properties": {
-        "publisher": "Microsoft.Powershell",
-        "type": "DSC",
-        "typeHandlerVersion": "2.19",
-        "autoUpgradeMinorVersion": true,
-        "settings": {
-          "modulesUrl": "[parameters('modulesUrl')]",
-          "configurationFunction": "ConfigureWebServer.ps1\\Main",
-          "properties": {
-            "MachineName": "[parameters('vmssName')]",
-            "WebDeployPackagePath": "[parameters('webdeploypkg')]"
-          }
-        },
-        "protectedSettings": { }
-      }
-    },
-    {
       "type": "Microsoft.Network/virtualNetworks",
       "name": "[variables('virtualNetworkName')]",
       "location": "[resourceGroup().location]",
@@ -306,6 +282,30 @@
           },
           "extensionProfile": {
             "extensions": [
+              {
+                "name": "DSCPowerShell",
+                "type": "extensions",
+                "location": "[resourceGroup().location]",
+                "apiVersion": "2015-05-01-preview",
+                "tags": {
+                  "displayName": "DSCPowerShell"
+                },
+                "properties": {
+                  "publisher": "Microsoft.Powershell",
+                  "type": "DSC",
+                  "typeHandlerVersion": "2.19",
+                  "autoUpgradeMinorVersion": true,
+                  "settings": {
+                    "modulesUrl": "[parameters('modulesUrl')]",
+                    "configurationFunction": "ConfigureWebServer.ps1\\Main",
+                    "properties": {
+                      "MachineName": "[parameters('vmssName')]",
+                      "WebDeployPackagePath": "[parameters('webdeploypkg')]"
+                    }
+                  },
+                  "protectedSettings": { }
+                }
+              },
               {
                 "name": "Microsoft.Insights.VMDiagnosticsSettings",
                 "properties": {
