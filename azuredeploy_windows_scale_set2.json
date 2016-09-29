@@ -286,7 +286,7 @@
                 "name": "DSCPowerShell",
                 "type": "extensions",
                 "location": "[resourceGroup().location]",
-                "apiVersion": "2015-05-01-preview",
+                "apiVersion": "[variables('computeApiVersion')]",
                 "tags": {
                   "displayName": "DSCPowerShell"
                 },
