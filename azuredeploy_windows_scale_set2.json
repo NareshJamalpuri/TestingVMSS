@@ -283,6 +283,23 @@
           "extensionProfile": {
             "extensions": [
               {
+                "name": "DSCPowerShell",
+                "properties": {
+                  "publisher": "Microsoft.Powershell",
+                  "type": "DSC",
+                  "typeHandlerVersion": "2.19",
+                  "autoUpgradeMinorVersion": true,
+                  "settings": {
+                    "modulesUrl": "[parameters('modulesUrl')]",
+                    "configurationFunction": "ConfigureWebServer.ps1\\Main",
+                    "properties": {
+                      "MachineName": "[parameters('vmssName')]",
+                      "WebDeployPackagePath": "[parameters('webdeploypkg')]"
+                    }
+                  }
+                }
+              },
+              {
                 "name": "Microsoft.Insights.VMDiagnosticsSettings",
                 "properties": {
                   "publisher": "Microsoft.Azure.Diagnostics",
