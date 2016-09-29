@@ -293,7 +293,6 @@
                     "modulesUrl": "[parameters('modulesUrl')]",
                     "configurationFunction": "ConfigureWebServer.ps1\\Main",
                     "properties": {
-                      "MachineName": "[parameters('vmssName')]",
                       "WebDeployPackagePath": "[parameters('webdeploypkg')]"
                     }
                   }
