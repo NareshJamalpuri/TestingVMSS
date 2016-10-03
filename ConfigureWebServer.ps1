@@ -25,25 +25,25 @@ Configuration Main
     WindowsFeature WebNetExt35
     {
         Name = "Web-Net-Ext"
-        Ensure = "Present"
+        Ensure = "Absent"
         DependsOn = "[WindowsFeature]WebServerRole"
     }
     WindowsFeature WebNetExt45
     {
         Name = "Web-Net-Ext45"
-        Ensure = "Present"
+        Ensure = "Absent"
         DependsOn = "[WindowsFeature]WebServerRole"
     }
 	WindowsFeature WebFtpServer
 	{
 	    Name = "Web-Ftp-Server"
-		Ensure = "Present"
+		Ensure = "Absent"
         DependsOn = "[WindowsFeature]WebServerRole"
 	}
 	WindowsFeature WebMgmtCompat
 	{
 	    Name = "Web-Mgmt-Compat"
-	    Ensure = "Present"
+	    Ensure = "Absent"
         DependsOn = "[WindowsFeature]WebServerRole"
 	}
     WindowsFeature WebISAPIExt
@@ -67,7 +67,7 @@ Configuration Main
     WindowsFeature WebRequestMonitor
     {
         Name = "Web-Request-Monitor"
-        Ensure = "Present"
+        Ensure = "Absent"
         DependsOn = "[WindowsFeature]WebServerRole"
     }
     WindowsFeature WebMgmtTools
@@ -91,19 +91,19 @@ Configuration Main
 	WindowsFeature WASProcessModel
     {
         Name = "WAS-Process-Model"
-        Ensure = "Present"
+        Ensure = "Absent"
         DependsOn = "[WindowsFeature]WebServerRole"
     }
 	WindowsFeature WASNetEnvironment
     {
         Name = "WAS-NET-Environment"
-        Ensure = "Present"
+        Ensure = "Absent"
         DependsOn = "[WindowsFeature]WebServerRole"
     }
 	WindowsFeature WASConfigAPIs
     {
         Name = "WAS-Config-APIs"
-        Ensure = "Present"
+        Ensure = "Absent"
         DependsOn = "[WindowsFeature]WebServerRole"
     }
 
