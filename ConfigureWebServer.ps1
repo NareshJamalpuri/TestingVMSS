@@ -25,13 +25,13 @@ Configuration Main
     WindowsFeature WebNetExt35
     {
         Name = "Web-Net-Ext"
-        Ensure = "Absent"
+        Ensure = "Present"
         DependsOn = "[WindowsFeature]WebServerRole"
     }
     WindowsFeature WebNetExt45
     {
         Name = "Web-Net-Ext45"
-        Ensure = "Absent"
+        Ensure = "Present"
         DependsOn = "[WindowsFeature]WebServerRole"
     }
 	WindowsFeature WebFtpServer
