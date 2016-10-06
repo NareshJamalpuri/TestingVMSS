@@ -161,9 +161,10 @@ Configuration Main
         # Get the WEB BITS
         $WebClient = New-Object -TypeName System.Net.WebClient
         $Destination= "C:\WindowsAzure\WebApplication1.zip"
-        $WebClient.DownloadFile("https://github.com/ganipcanot/TestingVMSS/raw/master/WebApplication1.zip", $destination) # Try with($using:WebDeployPackagePath,$destination)
+        $WebClient.DownloadFile($using:WebDeployPackagePath, $destination)#("https://github.com/ganipcanot/TestingVMSS/raw/master/WebApplication1.zip", $destination) # Try with($using:WebDeployPackagePath,$destination)
 
         # Get the WEB deployment file
+        # TODO: Parameterize this as well?
         $DestinationCMD = "C:\WindowsAzure\WebApplication1.deploy.cmd"
         $WebClient.DownloadFile("https://raw.githubusercontent.com/ganipcanot/TestingVMSS/master/WebApplication1.deploy.cmd", $DestinationCMD) #modify this path to get deploy.cmd
         
@@ -176,7 +177,7 @@ Configuration Main
         #Start-Process $Appcmd -ArgumentList "add app /site.name:""Test"" /path:/MyApp /physicalPath:""C:\inetpub\Test\MyApp""" -Wait
 
         # Execute the deployment of the web files
-        Start-Process $DestinationCMD /Y -Verb runas    
+        Start-Process $DestinationCMD /Y -Verb runas
         }
 
 	}
